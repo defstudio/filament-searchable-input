@@ -4,7 +4,7 @@ namespace DefStudio\SearchableInput\Forms\Components;
 
 use Closure;
 use DefStudio\SearchableInput\DTO\SearchResult;
-use Filament\Forms\Components\Actions\Action;
+use Filament\Actions\Action;
 use Filament\Forms\Components\TextInput;
 
 class SearchableInput extends TextInput
