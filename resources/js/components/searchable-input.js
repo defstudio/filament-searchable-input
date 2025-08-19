@@ -20,7 +20,7 @@ export default function searchableInput({statePath}) {
             this.previous_value = this.value
 
             // noinspection JSPotentiallyInvalidUsageOfThis
-            this.$wire.mountAction('search', { value: this.value })
+            this.$wire.callSchemaComponentMethod(statePath, 'getSearchResultsForJs', { search: this.value })
                 .then(response => {
                     this.suggestions = response
                     this.selected_suggestion = 0
@@ -35,7 +35,7 @@ export default function searchableInput({statePath}) {
             this.suggestions = []
 
             // noinspection JSPotentiallyInvalidUsageOfThis
-            this.$wire.mountAction('item_selected', { item: item })
+            this.$wire.callSchemaComponentMethod(statePath, 'reactOnItemSelectedFromJs', { item: item })
         },
         previous_suggestion() {
             this.selected_suggestion--

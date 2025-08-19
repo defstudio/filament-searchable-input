@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpUnused */
 
 namespace DefStudio\SearchableInput\Forms\Components;
 
@@ -6,6 +6,8 @@ use Closure;
 use DefStudio\SearchableInput\DTO\SearchResult;
 use Filament\Actions\Action;
 use Filament\Forms\Components\TextInput;
+use Filament\Support\Components\Attributes\ExposedLivewireMethod;
+use Livewire\Attributes\Renderless;
 
 class SearchableInput extends TextInput
 {
@@ -18,49 +20,45 @@ class SearchableInput extends TextInput
     /** @var array<array-key, string>|Closure(): ?array<array-key, string>|null */
     protected array | Closure | null $options = null;
 
-    protected function setUp(): void
+    #[ExposedLivewireMethod]
+    #[Renderless]
+    public function getSearchResultsForJs(string $search): array
     {
-        $this->fieldWrapperView('searchable-input-wrapper');
+        if ($this->isDisabled() || $this->isReadOnly()) {
+            return [];
+        }
 
-        $this->extraInputAttributes(['x-model' => 'value']);
+        $results = $this->evaluate($this->searchUsing, [
+            'search' => $search,
+            'options' => $this->getOptions(),
+        ]);
 
-        $this->registerActions([
-            Action::make('search')->action(function (SearchableInput $component, array $arguments): array {
-                if ($component->isDisabled() || $component->isReadOnly()) {
-                    return [];
-                }
+        $results ??= collect($this->getOptions())
+            ->filter(fn (string $option) => str($option)->contains($search, true))
+            ->toArray();
 
-                $search = $arguments['value'];
+        if (array_is_list($results)) {
+            $results = collect($results)
+                ->map(fn ($item) => $item instanceof SearchResult ? $item : SearchResult::make($item))
+                ->toArray();
+        } else {
+            $results = collect($results)
+                ->map(fn ($item, $key) => $item instanceof SearchResult ? $item : SearchResult::make($key, $item))
+                ->toArray();
+        }
 
-                $results = $this->evaluate($this->searchUsing, [
-                    'search' => $search,
-                    'options' => $this->getOptions(),
-                ]);
+        return array_values($results);
+    }
 
-                $results ??= collect($this->getOptions())
-                    ->filter(fn (string $option) => str($option)->contains($search, true))
-                    ->toArray();
-
-                if (array_is_list($results)) {
-                    $results = collect($results)
-                        ->map(fn ($item) => $item instanceof SearchResult ? $item : SearchResult::make($item))
-                        ->toArray();
-                } else {
-                    $results = collect($results)
-                        ->map(fn ($item, $key) => $item instanceof SearchResult ? $item : SearchResult::make($key, $item))
-                        ->toArray();
-                }
-
-                return array_values($results);
-            }),
-
-            Action::make('item_selected')->action(function ($arguments, SearchableInput $component) {
-                $component->evaluate($this->onItemSelected, [
-                    'item' => SearchResult::fromArray($arguments['item']),
-                ]);
-            }),
+    #[ExposedLivewireMethod]
+    #[Renderless]
+    public function reactOnItemSelectedFromJs(array $item): void
+    {
+        $this->evaluate($this->onItemSelected, [
+            'item' => SearchResult::fromArray($item),
         ]);
     }
+
 
     /**
      * @return array<array-key, string>
