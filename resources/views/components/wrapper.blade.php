@@ -1,3 +1,5 @@
+@php use Filament\Support\Facades\FilamentAsset; @endphp
+
 @props([
     'field' => null,
     'hasInlineLabel' => null,
@@ -11,7 +13,7 @@
         class="def-fo-searchable-input-wrapper relative"
 
         x-load
-        x-load-src="{{\Filament\Support\Facades\FilamentAsset::getAlpineComponentSrc('filament-searchable-input', 'defstudio/filament-searchable-input')}}"
+        x-load-src="{{FilamentAsset::getAlpineComponentSrc('filament-searchable-input', 'defstudio/filament-searchable-input')}}"
         x-data="searchableInput({
             statePath: '{{$field->getStatePath()}}'
         })"
