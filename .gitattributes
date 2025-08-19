@@ -23,6 +23,7 @@
 /pint.json              export-ignore
 /psalm.xml              export-ignore
 /psalm.xml.dist         export-ignore
-/tailwind.config.js     export-ignore
 /testbench.yaml         export-ignore
+/vite.config.js
 /UPGRADING.md           export-ignore
+/resources/dist/filament-searchable-input.js.map export-ignore

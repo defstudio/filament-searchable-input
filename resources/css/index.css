@@ -1,6 +1,6 @@
-@import '../../vendor/filament/filament/resources/css/theme.css';
+@import 'tailwindcss';
 
-@source '../../resources/views/**/*.blade.php';
+@source '../../resources/views';
 
 .def-fo-searchable-input-wrapper{
     @apply relative;
