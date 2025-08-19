@@ -2,6 +2,17 @@
 
 All notable changes to `filament-searchable-input` will be documented in this file.
 
+## v4.0.1 - 2025-08-19
+
+### What's Changed
+
+* Bump stefanzweifel/git-auto-commit-action from 5 to 6 by @dependabot[bot] in https://github.com/defstudio/filament-searchable-input/pull/8
+* Bump form-data from 4.0.2 to 4.0.4 by @dependabot[bot] in https://github.com/defstudio/filament-searchable-input/pull/12
+* Bump aglipanci/laravel-pint-action from 2.5 to 2.6 by @dependabot[bot] in https://github.com/defstudio/filament-searchable-input/pull/13
+* Bump actions/checkout from 4 to 5 by @dependabot[bot] in https://github.com/defstudio/filament-searchable-input/pull/14
+
+**Full Changelog**: https://github.com/defstudio/filament-searchable-input/compare/v1.0.15...v4.0.1
+
 ## v4.0.0-beta-4 - 2025-08-19
 
 **Full Changelog**: https://github.com/defstudio/filament-searchable-input/compare/v4.0.0-beta3...v4.0.0-beta-4
