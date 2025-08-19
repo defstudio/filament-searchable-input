@@ -1,6 +1,6 @@
 // noinspection JSUnusedGlobalSymbols,JSUnresolvedReference
 
-export default function searchableInput({statePath}) {
+export default function searchableInput({key, statePath}) {
     return {
         previous_value: null,
         value: this.$wire.entangle(statePath),
@@ -20,7 +20,7 @@ export default function searchableInput({statePath}) {
             this.previous_value = this.value
 
             // noinspection JSPotentiallyInvalidUsageOfThis
-            this.$wire.callSchemaComponentMethod(statePath, 'getSearchResultsForJs', { search: this.value })
+            this.$wire.callSchemaComponentMethod(key, 'getSearchResultsForJs', { search: this.value })
                 .then(response => {
                     this.suggestions = response
                     this.selected_suggestion = 0
@@ -35,7 +35,7 @@ export default function searchableInput({statePath}) {
             this.suggestions = []
 
             // noinspection JSPotentiallyInvalidUsageOfThis
-            this.$wire.callSchemaComponentMethod(statePath, 'reactOnItemSelectedFromJs', { item: item })
+            this.$wire.callSchemaComponentMethod(key, 'reactOnItemSelectedFromJs', { item: item })
         },
         previous_suggestion() {
             this.selected_suggestion--

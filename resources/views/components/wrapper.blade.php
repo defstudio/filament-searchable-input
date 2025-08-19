@@ -15,7 +15,8 @@
         x-load
         x-load-src="{{FilamentAsset::getAlpineComponentSrc('filament-searchable-input', 'defstudio/filament-searchable-input')}}"
         x-data="searchableInput({
-            statePath: '{{$field->getStatePath()}}'
+            key: @js($field->getKey()),
+            statePath: @js($field->getStatePath()),
         })"
 
         x-on:click.away="suggestions=[]"

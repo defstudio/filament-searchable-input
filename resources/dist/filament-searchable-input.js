@@ -1,7 +1,7 @@
-function t({ statePath: s }) {
+function i({ key: s, statePath: t }) {
   return {
     previous_value: null,
-    value: this.$wire.entangle(s),
+    value: this.$wire.entangle(t),
     suggestions: [],
     selected_suggestion: 0,
     refresh_suggestions: function() {
@@ -27,6 +27,6 @@ function t({ statePath: s }) {
   };
 }
 export {
-  t as default
+  i as default
 };
 //# sourceMappingURL=filament-searchable-input.js.map
