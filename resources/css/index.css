@@ -1,5 +1,7 @@
 @import '../../vendor/filament/filament/resources/css/theme.css';
 
+@source '../../resources/views/**/*.blade.php';
+
 .def-fo-searchable-input-wrapper{
     @apply relative;
 }
