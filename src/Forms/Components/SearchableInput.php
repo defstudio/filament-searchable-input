@@ -19,7 +19,14 @@ class SearchableInput extends TextInput
     protected ?Closure $onItemSelected = null;
 
     /** @var array<array-key, string>|Closure(): ?array<array-key, string>|null */
-    protected array | Closure | null $options = null;
+    protected array|Closure|null $options = null;
+
+    protected function setUp(): void
+    {
+        $this->fieldWrapperView('searchable-input-wrapper');
+
+        $this->extraInputAttributes(['x-model' => 'value']);
+    }
 
     #[ExposedLivewireMethod]
     #[Renderless]
@@ -35,16 +42,16 @@ class SearchableInput extends TextInput
         ]);
 
         $results ??= collect($this->getOptions())
-            ->filter(fn (string $option) => str($option)->contains($search, true))
+            ->filter(fn(string $option) => str($option)->contains($search, true))
             ->toArray();
 
         if (array_is_list($results)) {
             $results = collect($results)
-                ->map(fn ($item) => $item instanceof SearchResult ? $item : SearchResult::make($item))
+                ->map(fn($item) => $item instanceof SearchResult ? $item : SearchResult::make($item))
                 ->toArray();
         } else {
             $results = collect($results)
-                ->map(fn ($item, $key) => $item instanceof SearchResult ? $item : SearchResult::make($key, $item))
+                ->map(fn($item, $key) => $item instanceof SearchResult ? $item : SearchResult::make($key, $item))
                 ->toArray();
         }
 
@@ -71,7 +78,7 @@ class SearchableInput extends TextInput
     /**
      * @param  array<array-key, string>|Closure(): array<array-key, string>|null  $options
      */
-    public function options(array | Closure | null $options): static
+    public function options(array|Closure|null $options): static
     {
         $this->options = $options;
 
