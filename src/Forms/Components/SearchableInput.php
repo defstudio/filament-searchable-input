@@ -18,6 +18,8 @@ class SearchableInput extends TextInput
     /** @var ?Closure(SearchResult): void */
     protected ?Closure $onItemSelected = null;
 
+    protected bool $optionsIsList = false;
+
     /** @var array<array-key, string>|Closure(): ?array<array-key, string>|null */
     protected array | Closure | null $options = null;
 
@@ -45,7 +47,7 @@ class SearchableInput extends TextInput
             ->filter(fn (string $option) => str($option)->contains($search, true))
             ->toArray();
 
-        if (array_is_list($results)) {
+        if ($this->optionsIsList) {
             $results = collect($results)
                 ->map(fn ($item) => $item instanceof SearchResult ? $item : SearchResult::make($item))
                 ->toArray();
@@ -72,7 +74,13 @@ class SearchableInput extends TextInput
      */
     public function getOptions(): array
     {
-        return $this->evaluate($this->options) ?? [];
+        $options = $this->evaluate($this->options) ?? [];
+
+        if(array_is_list($options)) {
+            $this->optionsIsList = true;
+        }
+
+        return $options;
     }
 
     /**
