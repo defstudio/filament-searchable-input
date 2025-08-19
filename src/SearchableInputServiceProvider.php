@@ -99,7 +99,6 @@ class SearchableInputServiceProvider extends PackageServiceProvider
     protected function getAssets(): array
     {
         return [
-            Css::make('filament-searchable-input-styles', __DIR__ . '/../resources/dist/filament-searchable-input.css'),
             AlpineComponent::make('filament-searchable-input', __DIR__ . '/../resources/dist/filament-searchable-input.js'),
         ];
     }

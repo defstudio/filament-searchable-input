@@ -8,7 +8,7 @@
         :field="$field"
         :has-inline-label="$hasInlineLabel"
 
-        class="def-fo-searchable-input-wrapper"
+        class="def-fo-searchable-input-wrapper relative"
 
         x-load
         x-load-src="{{\Filament\Support\Facades\FilamentAsset::getAlpineComponentSrc('filament-searchable-input', 'defstudio/filament-searchable-input')}}"
@@ -34,14 +34,19 @@
         {{$slot}}
 
         <div x-show="suggestions.length > 0"
-             class="def-fo-searchable-input-dropdown"
+             class="def-fo-searchable-input-dropdown
+                    z-10 absolute top-full mt-2 left-0 px-1 py-1 overflow-hidden
+                    rounded-lg bg-white dark:bg-gray-900
+                    shadow-lg  ring-1 ring-gray-950/5 dark:ring-white/10
+                    will-change-[visibility]
+                    text-sm font-medium text-gray-950 dark:text-white"
         >
-            <div class="def-fo-searchable-input-dropdown-wrapper">
-                <ul class="def-fo-searchable-input-dropdown-list" wire:loading.class.delay="def-fo-searchable-input-dropdown-list-loading">
+            <div class="def-fo-searchable-input-dropdown-wrapper max-h-60 overflow-y-auto">
+                <ul class="def-fo-searchable-input-dropdown-list h-full" wire:loading.class.delay="def-fo-searchable-input-dropdown-list-loading animate-pulse">
                     <template x-for="(suggestion, index) in suggestions">
-                        <li class="def-fo-searchable-input-dropdown-list-item"
+                        <li class="def-fo-searchable-input-dropdown-list-item px-2 py-2 rounded-md hover:bg-gray-50 active:bg-gray-200 cursor-pointer"
                             x-bind:class="{
-                            'def-fo-searchable-input-dropdown-list-item-selected': selected_suggestion === index
+                            'def-fo-searchable-input-dropdown-list-item-selected bg-gray-50 dark:bg-white/5 hover:bg-gray-100 dark:hover:bg-white/10': selected_suggestion === index
                         }"
                             x-text="`${suggestion.label}`"
                             x-on:click="set(suggestion)"
