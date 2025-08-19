@@ -10,7 +10,6 @@ use DefStudio\SearchableInput\Testing\TestsSearchableInput;
 use DefStudio\SearchableInput\View\Components\Wrapper;
 use Filament\Support\Assets\AlpineComponent;
 use Filament\Support\Assets\Asset;
-use Filament\Support\Assets\Css;
 use Filament\Support\Facades\FilamentAsset;
 use Filament\Support\Facades\FilamentIcon;
 use Illuminate\Filesystem\Filesystem;
