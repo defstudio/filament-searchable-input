@@ -1,10 +1,11 @@
-<?php /** @noinspection PhpUnused */
+<?php
+
+/** @noinspection PhpUnused */
 
 namespace DefStudio\SearchableInput\Forms\Components;
 
 use Closure;
 use DefStudio\SearchableInput\DTO\SearchResult;
-use Filament\Actions\Action;
 use Filament\Forms\Components\TextInput;
 use Filament\Support\Components\Attributes\ExposedLivewireMethod;
 use Livewire\Attributes\Renderless;
@@ -58,7 +59,6 @@ class SearchableInput extends TextInput
             'item' => SearchResult::fromArray($item),
         ]);
     }
-
 
     /**
      * @return array<array-key, string>
