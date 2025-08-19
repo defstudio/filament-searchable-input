@@ -76,7 +76,7 @@ class SearchableInput extends TextInput
     {
         $options = $this->evaluate($this->options) ?? [];
 
-        if(array_is_list($options)) {
+        if (array_is_list($options)) {
             $this->optionsIsList = true;
         }
 
