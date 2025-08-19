@@ -27,7 +27,6 @@ After setting up a custom theme add the plugin's views to your theme css file or
 ```
 
 
-
 ## Views customization
 
 
@@ -212,6 +211,16 @@ In each of its methods, `SearchableInput` fully supports Filament utility inject
 ```
 
 
+
+## Upgrade from v1.x (Filament v3) to v4.x (Filament v4)
+
+With Filament v4 it has been recommended for plugin authors to have the users include their plugins views in a custom theme, rather than include the built css from the plugin. So for upgrades from Filament v3 to v4 it is recommended to follow these instructions from [Filament Docs](https://filamentphp.com/docs/4.x/styling/overview#creating-a-custom-theme) to set up a custom theme (if not already done) and add this to your theme/app css file
+
+```css
+@source '../../../../vendor/defstudio/filament-searchable-input/resources/**/*.blade.php';
+```
+
+
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
@@ -222,11 +231,12 @@ Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
 
 ## Security Vulnerabilities
 
-Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
+Please review [our security policy](.github/SECURITY.md) on how to report security vulnerabilities.
 
 ## Credits
 
 - [Fabio Ivona](https://github.com/fabio-ivona)
+- [Mario Gattolla](https://github.com/MarioGattolla)
 - [All Contributors](../../contributors)
 
 ## License
