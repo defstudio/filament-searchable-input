@@ -2,9 +2,9 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "dev:styles": "npx @tailwindcss/cli -i resources/css/index.css -o resources/dist/filament-searchable-input.css --watch",
+        "dev:styles": "tailwindcss -i resources/css/index.css -o resources/dist/filament-searchable-input.css --watch",
         "dev:scripts": "vite",
-        "build:styles": "npx @tailwindcss/cli -i resources/css/index.css -o resources/dist/filament-searchable-input.css --minify && npm run purge",
+        "build:styles": "tailwindcss -i resources/css/index.css -o resources/dist/filament-searchable-input.css --minify && npm run purge",
         "build:scripts": "vite build",
         "purge": "filament-purge -i resources/dist/filament-searchable-input.css -o resources/dist/filament-searchable-input.css -v 3.x",
         "dev": "npm-run-all --parallel dev:*",
