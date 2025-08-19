@@ -10,13 +10,13 @@ function t({ statePath: s }) {
           this.suggestions = [], this.previous_value = null;
           return;
         }
-        this.previous_value = this.value, this.$wire.mountAction("search", { value: this.value }).then((e) => {
+        this.previous_value = this.value, this.$wire.callSchemaComponentMethod(s, "getSearchResultsForJs", { search: this.value }).then((e) => {
           this.suggestions = e, this.selected_suggestion = 0;
         });
       }
     },
     set: function(e) {
-      e !== void 0 && (this.value = e.value, this.suggestions = [], this.$wire.mountAction("item_selected", { item: e }));
+      e !== void 0 && (this.value = e.value, this.suggestions = [], this.$wire.callSchemaComponentMethod(s, "reactOnItemSelectedFromJs", { item: e }));
     },
     previous_suggestion() {
       this.selected_suggestion--, this.selected_suggestion < 0 && (this.selected_suggestion = 0);
