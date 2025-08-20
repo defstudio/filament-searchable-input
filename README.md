@@ -12,6 +12,15 @@ A searchable autocomplete input for Filament
 [Demo](https://github.com/user-attachments/assets/cdc816c4-fa80-46f7-bb7b-43f2f018f61e)
 
 
+
+## Filament Compatibility
+
+| Package Version | Filament Version |
+|:---------------:|:----------------:|
+|       1.x       |       3.x        |
+|       4.x       |       4.x        |
+
+
 ## Installation
 
 You can install the package via composer:
@@ -215,7 +224,9 @@ In each of its methods, `SearchableInput` fully supports Filament utility inject
 
 
 
-## Upgrade from v1.x (Filament v3) to v4.x (Filament v4)
+## Upgrading
+
+### From v1.x (Filament v3) to v4.x (Filament v4)
 
 With Filament v4 it has been recommended for plugin authors to have the users include their plugins views in a custom theme, rather than include the built css from the plugin. So for upgrades from Filament v3 to v4 it is recommended to follow these instructions from [Filament Docs](https://filamentphp.com/docs/4.x/styling/overview#creating-a-custom-theme) to set up a custom theme (if not already done) and add this to your theme/app css file
 
