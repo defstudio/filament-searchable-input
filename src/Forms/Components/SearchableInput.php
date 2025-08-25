@@ -61,7 +61,6 @@ class SearchableInput extends TextInput
     }
 
     #[ExposedLivewireMethod]
-    #[Renderless]
     public function reactOnItemSelectedFromJs(array $item): void
     {
         $this->evaluate($this->onItemSelected, [
