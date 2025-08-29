@@ -38,7 +38,7 @@
 
         <div x-show="suggestions.length > 0"
              class="def-fo-searchable-input-dropdown
-                    z-10 absolute top-full mt-2 left-0 px-1 py-1 overflow-hidden
+                    z-10 absolute top-full mt-2 start-0 px-1 py-1 overflow-hidden
                     rounded-lg bg-white dark:bg-gray-900
                     shadow-lg  ring-1 ring-gray-950/5 dark:ring-white/10
                     will-change-[visibility]
