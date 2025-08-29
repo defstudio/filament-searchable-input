@@ -2,6 +2,18 @@
 
 All notable changes to `filament-searchable-input` will be documented in this file.
 
+## v4.0.10 - 2025-08-29
+
+### What's Changed
+
+* Add RTL support by @zvizvi in https://github.com/defstudio/filament-searchable-input/pull/15
+
+### New Contributors
+
+* @zvizvi made their first contribution in https://github.com/defstudio/filament-searchable-input/pull/15
+
+**Full Changelog**: https://github.com/defstudio/filament-searchable-input/compare/v4.0.9...v4.0.10
+
 ## v4.0.9 - 2025-08-25
 
 **Full Changelog**: https://github.com/defstudio/filament-searchable-input/compare/v4.0.8...v4.0.9
