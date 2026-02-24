@@ -2,6 +2,16 @@
 
 All notable changes to `filament-searchable-input` will be documented in this file.
 
+## v5.0.0 - 2026-02-24
+
+### What's Changed
+
+* Bump actions/checkout from 5 to 6 by @dependabot[bot] in https://github.com/defstudio/filament-searchable-input/pull/20
+* Bump dependabot/fetch-metadata from 2.4.0 to 2.5.0 by @dependabot[bot] in https://github.com/defstudio/filament-searchable-input/pull/22
+* Bump stefanzweifel/git-auto-commit-action from 6 to 7 by @dependabot[bot] in https://github.com/defstudio/filament-searchable-input/pull/18
+
+**Full Changelog**: https://github.com/defstudio/filament-searchable-input/compare/v4.0.11...v5.0.0
+
 ## v4.0.11 - 2025-10-31
 
 ### What's Changed
