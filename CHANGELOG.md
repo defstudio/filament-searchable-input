@@ -2,6 +2,41 @@
 
 All notable changes to `filament-searchable-input` will be documented in this file.
 
+## v5.0.1 - 2026-02-24
+
+**Full Changelog**: https://github.com/defstudio/filament-searchable-input/compare/v5.0.0...v5.0.1
+
+## v5.0.0 - 2026-02-24
+
+### What's Changed
+
+* Bump actions/checkout from 5 to 6 by @dependabot[bot] in https://github.com/defstudio/filament-searchable-input/pull/20
+* Bump dependabot/fetch-metadata from 2.4.0 to 2.5.0 by @dependabot[bot] in https://github.com/defstudio/filament-searchable-input/pull/22
+* Bump stefanzweifel/git-auto-commit-action from 6 to 7 by @dependabot[bot] in https://github.com/defstudio/filament-searchable-input/pull/18
+
+**Full Changelog**: https://github.com/defstudio/filament-searchable-input/compare/v4.0.11...v5.0.0
+
+## v4.0.11 - 2025-10-31
+
+### What's Changed
+
+* Bump vite from 7.1.3 to 7.1.5 by @dependabot[bot] in https://github.com/defstudio/filament-searchable-input/pull/17
+* Bump vite from 7.1.5 to 7.1.11 by @dependabot[bot] in https://github.com/defstudio/filament-searchable-input/pull/19
+
+**Full Changelog**: https://github.com/defstudio/filament-searchable-input/compare/v4.0.10...v4.0.11
+
+## v4.0.10 - 2025-08-29
+
+### What's Changed
+
+* Add RTL support by @zvizvi in https://github.com/defstudio/filament-searchable-input/pull/15
+
+### New Contributors
+
+* @zvizvi made their first contribution in https://github.com/defstudio/filament-searchable-input/pull/15
+
+**Full Changelog**: https://github.com/defstudio/filament-searchable-input/compare/v4.0.9...v4.0.10
+
 ## v4.0.9 - 2025-08-25
 
 **Full Changelog**: https://github.com/defstudio/filament-searchable-input/compare/v4.0.8...v4.0.9
