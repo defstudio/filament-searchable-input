@@ -2,6 +2,16 @@
 
 All notable changes to `filament-searchable-input` will be documented in this file.
 
+## v5.0.2 - 2026-03-17
+
+### What's Changed
+
+* Bump rollup from 4.46.3 to 4.59.0 by @dependabot[bot] in https://github.com/defstudio/filament-searchable-input/pull/24
+* Bump ramsey/composer-install from 3 to 4 by @dependabot[bot] in https://github.com/defstudio/filament-searchable-input/pull/26
+* filament 5 upgrade by @MarioGattolla in https://github.com/defstudio/filament-searchable-input/pull/25
+
+**Full Changelog**: https://github.com/defstudio/filament-searchable-input/compare/v5.0.1...v5.0.2
+
 ## v5.0.1 - 2026-02-24
 
 **Full Changelog**: https://github.com/defstudio/filament-searchable-input/compare/v5.0.0...v5.0.1
