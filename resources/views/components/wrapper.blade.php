@@ -51,7 +51,11 @@
                             x-bind:class="{
                             'def-fo-searchable-input-dropdown-list-item-selected bg-gray-50 dark:bg-white/5 hover:bg-gray-100 dark:hover:bg-white/10': selected_suggestion === index
                         }"
-                            x-text="`${suggestion.label}`"
+                            @if ($field->isHtmlAllowed())
+                                x-html="`${suggestion.label}`"
+                            @else
+                                x-text="`${suggestion.label}`"
+                            @endif
                             x-on:click="set(suggestion)"
                         ></li>
                     </template>
