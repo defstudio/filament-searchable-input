@@ -112,6 +112,25 @@ class ProductResource
 ```
 
 
+### HTML option labels
+
+Option labels are rendered as plain text by default. To render HTML in the search dropdown, use `allowHtml()`:
+
+```php
+SearchableInput::make('StockUom')
+    ->allowHtml()
+    ->options([
+        'EA' => '<strong>EA</strong> <span>Each</span>',
+        'FT' => '<strong>FT</strong> <span>Feet</span>',
+    ]);
+```
+
+Only the label is rendered as HTML; selecting an option still inserts its value (`EA` or `FT`) into the input. This also applies to labels returned by `searchUsing()`, including `SearchResult` labels.
+
+You can pass a boolean or a closure to enable HTML conditionally: `allowHtml(false)` or `allowHtml(fn (): bool => true)`.
+
+Only enable HTML for trusted labels. Escape dynamic content (for example, with `e()`) or sanitize it before including it in a label to prevent XSS attacks.
+
 ## Custom Search Function
 
 Instead (or along with) defining an `->options()` set, the search result set can be customized:

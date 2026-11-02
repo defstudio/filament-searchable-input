@@ -6,12 +6,15 @@ namespace DefStudio\SearchableInput\Forms\Components;
 
 use Closure;
 use DefStudio\SearchableInput\DTO\SearchResult;
+use Filament\Forms\Components\Concerns\CanAllowHtml;
 use Filament\Forms\Components\TextInput;
 use Filament\Support\Components\Attributes\ExposedLivewireMethod;
 use Livewire\Attributes\Renderless;
 
 class SearchableInput extends TextInput
 {
+    use CanAllowHtml;
+
     /** @var ?Closure(string): ?array<int|string, string|SearchResult> */
     protected ?Closure $searchUsing = null;
 
