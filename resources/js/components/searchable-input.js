@@ -22,7 +22,7 @@ export default function searchableInput({key, statePath}) {
             // noinspection JSPotentiallyInvalidUsageOfThis
             this.$wire.callSchemaComponentMethod(key, 'getSearchResultsForJs', { search: this.value })
                 .then(response => {
-                    this.suggestions = response
+                    this.suggestions = Array.isArray(response) ? response : []
                     this.selected_suggestion = 0
                 })
         },
@@ -38,6 +38,11 @@ export default function searchableInput({key, statePath}) {
             this.$wire.callSchemaComponentMethod(key, 'reactOnItemSelectedFromJs', { item: item })
         },
         previous_suggestion() {
+            if (!Array.isArray(this.suggestions) || this.suggestions.length === 0) {
+                this.selected_suggestion = 0
+                return
+            }
+
             this.selected_suggestion--
 
             if (this.selected_suggestion < 0) {
@@ -45,6 +50,11 @@ export default function searchableInput({key, statePath}) {
             }
         },
         next_suggestion() {
+            if (!Array.isArray(this.suggestions) || this.suggestions.length === 0) {
+                this.selected_suggestion = 0
+                return
+            }
+
             this.selected_suggestion++
 
             if (this.selected_suggestion > this.suggestions.length - 1) {
