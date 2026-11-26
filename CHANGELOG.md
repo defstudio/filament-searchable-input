@@ -2,6 +2,29 @@
 
 All notable changes to `filament-searchable-input` will be documented in this file.
 
+## v5.0.3 - 2026-11-26
+
+### What's Changed
+
+* Bump picomatch from 4.0.3 to 4.0.4 by @dependabot[bot] in https://github.com/defstudio/filament-searchable-input/pull/27
+* Bump dependabot/fetch-metadata from 2.5.0 to 3.0.0 by @dependabot[bot] in https://github.com/defstudio/filament-searchable-input/pull/29
+* Bump vite from 7.1.11 to 7.3.2 by @dependabot[bot] in https://github.com/defstudio/filament-searchable-input/pull/30
+* Bump dependabot/fetch-metadata from 3.0.0 to 3.1.0 by @dependabot[bot] in https://github.com/defstudio/filament-searchable-input/pull/31
+* Bump esbuild and vite by @dependabot[bot] in https://github.com/defstudio/filament-searchable-input/pull/32
+* Bump actions/checkout from 6 to 7 by @dependabot[bot] in https://github.com/defstudio/filament-searchable-input/pull/33
+* Bump postcss from 8.5.15 to 8.5.25 by @dependabot[bot] in https://github.com/defstudio/filament-searchable-input/pull/34
+* Bump source-map-js from 1.2.1 to 1.2.2 by @dependabot[bot] in https://github.com/defstudio/filament-searchable-input/pull/35
+* Bump vite from 8.0.16 to 8.1.6 by @dependabot[bot] in https://github.com/defstudio/filament-searchable-input/pull/36
+* Allow opt-in HTML option labels in SearchableInput by @BenjaminRayner in https://github.com/defstudio/filament-searchable-input/pull/37
+* Fix suggestions breaking when using key() by @skillbobby in https://github.com/defstudio/filament-searchable-input/pull/38
+
+### New Contributors
+
+* @BenjaminRayner made their first contribution in https://github.com/defstudio/filament-searchable-input/pull/37
+* @skillbobby made their first contribution in https://github.com/defstudio/filament-searchable-input/pull/38
+
+**Full Changelog**: https://github.com/defstudio/filament-searchable-input/compare/v5.0.2...v5.0.3
+
 ## v5.0.2 - 2026-03-17
 
 ### What's Changed
